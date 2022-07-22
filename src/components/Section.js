@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function Section({ title, description, leftBtnText, rightBtnText, backgroundImg }) {
   return (
-    <Wrap backgroundImage={backgroundImg}>
+    <Wrap bgImage={backgroundImg}>
       <ItemText>
         <h1>{ title }</h1>
         <p>{ description }</p>
@@ -16,10 +16,10 @@ function Section({ title, description, leftBtnText, rightBtnText, backgroundImg 
           { rightBtnText && 
             <RightButton>
             { rightBtnText }
-          </RightButton>
+            </RightButton>
           }
         </ButtonGroup>
-        <DownArrow src='/images/down-arrow.svg' />
+        <DownArrow src="/images/down-arrow.svg" />
       </Buttons>
     </Wrap>
   )
@@ -37,12 +37,13 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-image: ${props => `url("/images/${props.backgroundImage}")`};
+  background-image: ${props => `url("/images/${props.bgImage}")`};
 `
 
 const ItemText = styled.div`
   padding-top: 15vh;
   text-align: center;
+  margin-top: 30px;
 `
 
 const ButtonGroup = styled.div`
@@ -76,6 +77,7 @@ const RightButton = styled(LeftButton)`
 `
 
 const DownArrow = styled.img`
+  margin-top: 20px;
   height: 40px;
   overflow-x: hidden;
   animation: animateDown infinite 1.5s;
