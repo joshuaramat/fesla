@@ -1,41 +1,49 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import { selectCars } from  '../features/car/carSlice';
-import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import CloseIcon from '@material-ui/icons/Close';
 
-function Header() {
-  const [burgerStatus, setBurgerStatus] = useState(false);
-  const cars = useSelector(selectCars);
+function Header({menuStatus, setMenuStatus}) {
   return (
     <Container>
-      <a href='#'>
-        <img src='/images/logo.svg' alt='' />
-      </a>
-      <Menu>
-        {cars && cars.map((car, index) => (
-          <a key={index} href='#'>{car}</a>
-        ))}
-      </Menu>
-      <RightMenu>
-        <a href='#'>Shop</a>
-        <a href='#'>Account</a>
-        <CustomMenu onClick={() => setBurgerStatus(true)} />
-      </RightMenu>
-      <BurgerNav show={burgerStatus}>
+      <HeaderLogo>
+        <Link to='/'>
+          <img 
+            src='https://assets.website-files.com/5e8fceb1c9af5c3915ec97a0/5ec2f037975ed372da9f6286_Tesla-Logo-PNG-HD.png' alt='' 
+          />
+        </Link>
+      </HeaderLogo>
+      <HeaderLinks>
+        <Link to='/'>Model S</Link>
+        <Link to='/'>Model 3</Link>
+        <Link to='/'>Model X</Link>
+        <Link to='/'>Model Y</Link>
+        <Link to='/'>Solar Roof</Link>
+        <Link to='/'>Solar Panels</Link>
+      </HeaderLinks>
+      <HeaderRight>
+        <Link to='/' hide={menuStatus}>Shop</Link>
+        <Link to='/' hide={menuStatus}>Account</Link>
+        <HeaderMenu 
+          onClick={() => setMenuStatus(!menuStatus)}
+        >
+          {menuStatus ? <CloseIcon/> : <Link to='/'>Menu</Link>}
+        </HeaderMenu>
+      </HeaderRight>
+      <MenuNav show={menuStatus}>
         <CloseWrapper>
-          <CustomClose onClick={() => setBurgerStatus(false)} />
+          {/* closes the burger menu on the right side when clicked */}
+          <CustomClose onClick={() => setMenuStatus(false)} />
         </CloseWrapper>
-        {cars && cars.map((car, index) => (
-          <li key={index}><a href='#'>{car}</a></li>
-        ))}
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Used Inventory</a></li>
-        <li><a href='#'>Trade-In</a></li>
-        <li><a href='#'>Cybertruck</a></li>
-        <li><a href='#'>Roadster</a></li>
-      </BurgerNav>
+        {/* {cars && cars.map((car, index) => (
+          <li key={index}><a href="#">{car}</a></li>
+        ))} */}
+        <li><a href="#">Existing Inventory</a></li>
+        <li><a href="#">Used Inventory</a></li>
+        <li><a href="#">Trade-In</a></li>
+        <li><a href="#">Cybertruck</a></li>
+        <li><a href="#">Roadster</a></li>
+      </MenuNav>
     </Container>
   )
 }
@@ -52,46 +60,58 @@ const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1
 `
 
-const Menu = styled.div`
+const HeaderLogo = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  flex: 1;
+  position: sticky;
+  padding: 25px;
+  padding-top: 15px;
+  z-index: 2;
+
+  img {
+    object-fit: contain;
+    flex: 1;
+    width: 100px;
+    margin-right: 100px;
+  }
+`
+
+const HeaderLinks = styled.div`
+  display: flex;
+  gap: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
 
   a {
-    font-weight: 600;
+    text-decoration: none;
     text-transform: uppercase;
-    padding: 0 10px;
-    flex-wrap: nowrap;
-  }
-  @media(max-width: 768px) {
-    display: none;
+    color: black
+    font-weight: 500;
+    font-size: 15px;
+    z-index: 0;
+    position: relative;
   }
 `
 
-const RightMenu = styled.div`
+const HeaderRight = styled(HeaderLinks)`
   display: flex;
   align-items: center;
-  a {
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-right: 10px;
-  }
 `
 
-const CustomMenu = styled(MenuIcon)`
+const HeaderMenu = styled.div`
   cursor: pointer;
 `
 
-const BurgerNav = styled.div`
+const MenuNav = styled.div`
   position: fixed;
   top: 0;
-  bottom: 0;
+  bottom 0;
   right: 0;
-  background: white;
+  background-color:white;
   width: 300px;
   z-index: 16;
   list-style: none;
@@ -101,11 +121,9 @@ const BurgerNav = styled.div`
   text-align: start;
   transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.2s;
-
-  li {
-    padding: 15px 0;
+  li{
+    padding: 15px 0px;
     border-bottom: 1px solid rgba(0,0,0, .2);
-
     a {
       font-weight: 600;
     }
@@ -113,11 +131,10 @@ const BurgerNav = styled.div`
 `
 
 const CustomClose = styled(CloseIcon)`
-  cursor: pointer;
-
+  cursor:pointer;
 `
 
 const CloseWrapper = styled.div`
-  display: flex;
+  display:flex;
   justify-content: flex-end;
 `

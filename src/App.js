@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Header from './components/Header';
-import Home from './components/Home';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Header from './components/Header'
 
 function App() {
+  const [menuStatus, setMenuStatus] = useState(false);
   return (
-    <div className="App">
-      <Header />
-      <Home />
-    </div>
+    <Router>
+      <div className="App">
+        <Header 
+          menuStatus={menuStatus} 
+          setMenuStatus={setMenuStatus} 
+        />
+        {/* HeaderBlock */}
+      </div>
+    </Router>
   );
 }
 
