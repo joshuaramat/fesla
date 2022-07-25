@@ -5,10 +5,10 @@ import styled from 'styled-components'
 function Section({ title, description, backgroundImg, leftBtnText, rightBtnText }) {
   return (
     <Wrap bgImage={backgroundImg}>
-        <ItemText>
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </ItemText>
+      <ItemText>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </ItemText>
       <Buttons>
         <ButtonGroup>
           <LeftButton>
@@ -88,5 +88,8 @@ const DownArrow = styled.img`
 `
 
 const Buttons = styled.div`
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
