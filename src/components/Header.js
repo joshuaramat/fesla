@@ -82,6 +82,10 @@ const HeaderLinks = styled.div`
     z-index: 0;
     position: relative;
   }
+
+  @media(max-width: 1068px) {
+    display: none;
+  }
 `
 
 const HeaderRight = styled(HeaderLinks)`
