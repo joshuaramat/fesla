@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+  color: #393c41;
   margin: 0;
   padding: 0;
 }
@@ -8,13 +9,9 @@
 body {
   width: 100%;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
 a {
   text-decoration: none;
-  color: black;
 }
 
 @keyframes animateDown {
@@ -32,4 +29,3 @@ a {
     transform: translateY(3px);
   }
 }
-

@@ -6,43 +6,43 @@ function Home() {
   return (
     <Container>
       <Section
-        title="Model 3"
-        description="Order Online for "
-        backgroundImg="model-3.jpg"
-        leftBtnText="Custom Order"
-        rightBtnText="Existing inventory"
-      />
-      <Section
-        title="Model Y"
-        description="Order Online for "
-        backgroundImg="model-y.jpg"
-        leftBtnText="Custom Order"
-        rightBtnText="Existing inventory"
-      />
-      <Section
         title="Model S"
-        description="Order Online for "
+        description="Order online for Touchless Delivery"
         backgroundImg="model-s.jpg"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"
       />
       <Section
+        title="Model Y"
+        description="Order online for Touchless Delivery"
+        backgroundImg="model-y.jpg"
+        leftBtnText="Custom Order"
+        rightBtnText="Existing inventory"
+      />
+      <Section
+        title="Model 3"
+        description="Order online for Touchless Delivery"
+        backgroundImg="model-3.jpg"
+        leftBtnText="Custom Order"
+        rightBtnText="Existing inventory"
+      />
+      <Section
         title="Model X"
-        description="Order Online for "
+        description="Order online for Touchless Delivery"
         backgroundImg="model-x.jpg"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"
       />
       <Section
-        title="Solar Panels"
-        description="Lowest Cost Solar Panels in America"
+        title="Lowest Cost Solar Panels in America"
+        description="Money-back guarantee"
         backgroundImg="solar-panel.jpg"
         leftBtnText="Order now"
         rightBtnText="Learn More"
       />
       <Section
-        title="Solar Roof"
-        description="Produce Clean Energy From Your Roof"
+        title="Solar for New Roofs"
+        description="Solar Roof Costs Less Than a New Roof Plus Solar Panels"
         backgroundImg="solar-roof.jpg"
         leftBtnText="Order now"
         rightBtnText="Learn More"
