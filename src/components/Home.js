@@ -7,28 +7,28 @@ function Home() {
     <Container>
       <Section
         title="Model 3"
-        description="Order online for Touchless Delivery"
+        description="Order Online for "
         backgroundImg="model-3.jpg"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"
       />
       <Section
         title="Model Y"
-        description="Order online for Touchless Delivery"
+        description="Order Online for "
         backgroundImg="model-y.jpg"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"
       />
       <Section
         title="Model S"
-        description="Order online for Touchless Delivery"
+        description="Order Online for "
         backgroundImg="model-s.jpg"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"
       />
       <Section
         title="Model X"
-        description="Order online for Touchless Delivery"
+        description="Order Online for "
         backgroundImg="model-x.jpg"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"

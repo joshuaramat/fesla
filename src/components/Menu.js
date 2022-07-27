@@ -45,7 +45,7 @@ const Container = styled.div`
   padding-bottom: 20px;
   padding-right: 20px;
   background-color: white;
-  z-index: 1;
+  z-index: 16;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -67,7 +67,6 @@ const MenuNav = styled.div`
 const CloseWrapper = styled.div`
   display:flex;
   justify-content: flex-end;
-  z-index: 19;
 `
 
 const CustomClose = styled(CloseIcon)`

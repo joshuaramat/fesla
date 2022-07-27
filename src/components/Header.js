@@ -22,12 +22,12 @@ function Header({menuStatus, setMenuStatus}) {
         <Link to='/'>Solar Panels</Link>
       </HeaderLinks>
       <HeaderRight>
-        <Link to='/' hide={menuStatus}>Shop</Link>
-        <Link to='/' hide={menuStatus}>Account</Link>
+        <Link to='/'>Shop</Link>
+        <Link to='/'>Account</Link>
         <HeaderMenu 
           onClick={() => setMenuStatus(!menuStatus)}
         >
-          {menuStatus ? <CloseIcon/> : <Link to='/'>Menu</Link>}
+          <Link to='/'>Menu</Link>
         </HeaderMenu>
       </HeaderRight>
       
