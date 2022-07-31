@@ -1,5 +1,6 @@
 # Fesla (Tesla Clone)
 
+Using Redux, I was able to map over car names throughout the page. I utilized state to allow a responsive open and closing of the sidebar. The Reducer allowed me to manipulate each car throughout this page in a seamless way, where I was able to have access to it throughout the whole code.
 ## Built With
 
 * [React](https://reactjs.org/)
